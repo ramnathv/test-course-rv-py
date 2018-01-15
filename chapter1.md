@@ -144,6 +144,7 @@ success_msg("Great work!")
 type: TabExercise
 xp: 100
 lang: python
+key: 560ccfacce
 ```
 
 The Olympic competitions between 1952 and 1988 took place during the height of the Cold War between the United States of America (USA) & the Union of Soviet Socialist Republics (USSR). 
@@ -165,6 +166,7 @@ medals = pd.read_csv(filename)
 ```yaml
 type: NormalExercise
 xp: 20
+key: 518652384a
 ```
   
 `@instructions`
@@ -193,6 +195,7 @@ during_cold_war = (medals.Edition>=1952) & (medals.Edition<=1988)
 ```yaml
 type: NormalExercise
 xp: 20
+key: c23ee4e1f0
 ```
 
 `@instructions`
@@ -231,6 +234,7 @@ is_usa_urs = medals.NOC.isin(['USA', 'URS'])
 ```yaml
 type: NormalExercise
 xp: 20
+key: 439d0646e6
 ```
 
 `@instructions`
@@ -276,6 +280,7 @@ cold_war_medals = medals.loc[during_cold_war & is_usa_urs]
 ```yaml
 type: NormalExercise
 xp: 20
+key: 777c7514cf
 ```
 
 `@instructions`
@@ -327,6 +332,7 @@ country_grouped = cold_war_medals.groupby('NOC')
 ```yaml
 type: NormalExercise
 xp: 20
+key: a858e0543c
 ```
 
 `@instructions`
