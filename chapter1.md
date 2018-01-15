@@ -144,7 +144,6 @@ success_msg("Great work!")
 type: TabExercise
 xp: 100
 lang: python
-key: 560ccfacce
 ```
 
 The Olympic competitions between 1952 and 1988 took place during the height of the Cold War between the United States of America (USA) & the Union of Soviet Socialist Republics (USSR). 
@@ -166,7 +165,6 @@ medals = pd.read_csv(filename)
 ```yaml
 type: NormalExercise
 xp: 20
-key: 893a4fa4e8
 ```
   
 `@instructions`
@@ -187,23 +185,6 @@ during_cold_war = ____
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
 during_cold_war = (medals.Edition>=1952) & (medals.Edition<=1988)
-
-#' @step
-# Extract rows for which 'NOC' is either 'USA' or 'URS': is_usa_urs
-is_usa_urs = medals.NOC.isin(['USA', 'URS'])
-
-#' @step
-# Use during_cold_war and is_usa_urs to create the DataFrame: cold_war_medals
-cold_war_medals = medals.loc[during_cold_war & is_usa_urs]
-
-#' @step
-# Group cold_war_medals by 'NOC'
-country_grouped = cold_war_medals.groupby('NOC')
-
-#' @step
-# Create and Print Nsports
-Nsports = ____
-print(Nsports)
 ```
 
 
@@ -212,7 +193,6 @@ print(Nsports)
 ```yaml
 type: NormalExercise
 xp: 20
-key: d4e13e6aa2
 ```
 
 `@instructions`
@@ -242,19 +222,6 @@ during_cold_war = (medals.Edition>=1952) & (medals.Edition<=1988)
 #' @step
 # Extract rows for which 'NOC' is either 'USA' or 'URS': is_usa_urs
 is_usa_urs = medals.NOC.isin(['USA', 'URS'])
-
-#' @step
-# Use during_cold_war and is_usa_urs to create the DataFrame: cold_war_medals
-cold_war_medals = medals.loc[during_cold_war & is_usa_urs]
-
-#' @step
-# Group cold_war_medals by 'NOC'
-country_grouped = cold_war_medals.groupby('NOC')
-
-#' @step
-# Create and Print Nsports
-Nsports = ____
-print(Nsports)
 ```
 
 
@@ -264,7 +231,6 @@ print(Nsports)
 ```yaml
 type: NormalExercise
 xp: 20
-key: 04d60bc901
 ```
 
 `@instructions`
@@ -301,15 +267,6 @@ is_usa_urs = medals.NOC.isin(['USA', 'URS'])
 #' @step
 # Use during_cold_war and is_usa_urs to create the DataFrame: cold_war_medals
 cold_war_medals = medals.loc[during_cold_war & is_usa_urs]
-
-#' @step
-# Group cold_war_medals by 'NOC'
-country_grouped = cold_war_medals.groupby('NOC')
-
-#' @step
-# Create and Print Nsports
-Nsports = ____
-print(Nsports)
 ```
 
 
@@ -319,7 +276,6 @@ print(Nsports)
 ```yaml
 type: NormalExercise
 xp: 20
-key: 5a2f83b501
 ```
 
 `@instructions`
@@ -364,11 +320,6 @@ cold_war_medals = medals.loc[during_cold_war & is_usa_urs]
 #' @step
 # Group cold_war_medals by 'NOC'
 country_grouped = cold_war_medals.groupby('NOC')
-
-#' @step
-# Create and Print Nsports
-Nsports = ____
-print(Nsports)
 ```
 
 ***
@@ -376,7 +327,6 @@ print(Nsports)
 ```yaml
 type: NormalExercise
 xp: 20
-key: 6f9b01561f
 ```
 
 `@instructions`
