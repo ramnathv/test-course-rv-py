@@ -155,7 +155,7 @@ The construction is mostly the same as in the preceding exercise. There is an ad
 
 `@pre_exercise_code`
 
-```{py}
+```{python}
 import pandas as pd
 filename = 'https://s3.amazonaws.com/assets.datacamp.com/production/course_1650/datasets/all_medalists.csv'
 medals = pd.read_csv(filename)
@@ -175,7 +175,7 @@ Create a Boolean Series called `during_cold_war` by extracting all rows from `me
 
 `@sample_code`
 
-```{py}
+```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
 during_cold_war = ____
@@ -205,7 +205,7 @@ Create a Boolean Series called `is_usa_urs` by extracting rows from `medals` for
 
 `@sample_code`
 
-```{py}
+```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
 during_cold_war = (medals.Edition>=1952) & (medals.Edition<=1988)
@@ -217,7 +217,7 @@ is_usa_urs = medals.NOC.isin(____)
 
 `@solution`
 
-```{py}
+```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
 during_cold_war = (medals.Edition>=1952) & (medals.Edition<=1988)
@@ -243,7 +243,7 @@ Filter the `medals` DataFrame using `during_cold_war` and `is_usa_urs` to create
 
 `@sample_code`
 
-```{py}
+```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
 during_cold_war = (medals.Edition>=1952) & (medals.Edition<=1988)
@@ -259,7 +259,7 @@ cold_war_medals = medals.loc[____ & ____]
 
 `@solution`
 
-```{py}
+```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
 during_cold_war = (medals.Edition>=1952) & (medals.Edition<=1988)
@@ -289,7 +289,7 @@ Group `cold_war_medals` by `'NOC'`
 
 `@sample_code`
 
-```{py}
+```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
 during_cold_war = (medals.Edition>=1952) & (medals.Edition<=1988)
@@ -309,7 +309,7 @@ country_grouped = ____
 
 `@solution`
 
-```{py}
+```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
 during_cold_war = (medals.Edition>=1952) & (medals.Edition<=1988)
@@ -339,14 +339,14 @@ key: a858e0543c
 
 Create a Series `Nsports` from `country_grouped` using indexing & chained methods:
 
-- Extract the column `'Sport'`.
+- Extract the column "Sport".
 - Use `.nunique()` to get the number of unique elements in each group;
 - Apply `.sort_values(ascending=False)` to  rearrange the Series.
 
 `@sample_code`
 
 
-```{py}
+```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
 during_cold_war = (medals.Edition>=1952) & (medals.Edition<=1988)
@@ -371,7 +371,7 @@ print(Nsports)
 
 `@solution`
 
-```{py}
+```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
 during_cold_war = (medals.Edition>=1952) & (medals.Edition<=1988)
@@ -390,7 +390,7 @@ country_grouped = cold_war_medals.groupby('NOC')
 
 #' @step
 # Create and Print Nsports
-Nsports = ____
+Nsports = countr_grouped["Sport"].nunique().sort(ascending = False)
 print(Nsports)
 ```
 
