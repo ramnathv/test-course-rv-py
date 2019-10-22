@@ -1,23 +1,23 @@
 ---
-title       : Insert the chapter title here
-description : Insert the chapter description here
-attachments :
-  slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
-
+title: 'Insert the chapter title here'
+description: 'Insert the chapter description here'
+attachments:
+    slides_link: 'https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf'
 ---
+
 ## A really bad movie
 
 ```yaml
 type: MultipleChoiceExercise
+key: bf521e6d81
 lang: python
 xp: 50
 skills: 1
-key: bf521e6d81
 ```
 
 Have a look at the plot that showed up in the viewer to the right. Which type of movies have the worst rating assigned to them?
 
-`@instructions`
+`@possible_answers`
 - Long movies, clearly
 - Short movies, clearly
 - Long movies, but the correlation seems weak
@@ -50,14 +50,15 @@ test_mc(4, [msg_bad, msg_bad, msg_bad, msg_success])
 ```
 
 ---
+
 ## Plot the movies yourself
 
 ```yaml
 type: NormalExercise
+key: b9afa74b05
 lang: python
 xp: 100
 skills: 1
-key: b9afa74b05
 ```
 
 Do you remember the plot of the last exercise? Let's make an even cooler plot!
@@ -142,9 +143,9 @@ success_msg("Great work!")
 
 ```yaml
 type: TabExercise
-xp: 100
-lang: python
 key: 560ccfacce
+lang: python
+xp: 100
 ```
 
 The Olympic competitions between 1952 and 1988 took place during the height of the Cold War between the United States of America (USA) & the Union of Soviet Socialist Republics (USSR). 
@@ -152,9 +153,7 @@ Your goal in this exercise is to aggregate the number of distinct sports in whic
 
 The construction is mostly the same as in the preceding exercise. There is an additional filtering stage beforehand in which you reduce the original DataFrame `medals` by extracting data from the Cold War period that applies only to the US or to the USSR. The relevant country codes in the DataFrame, which has been pre-loaded as `medals`, are `'USA'` & `'URS'`.
 
-
 `@pre_exercise_code`
-
 ```{python}
 import pandas as pd
 filename = 'https://s3.amazonaws.com/assets.datacamp.com/production/course_1650/datasets/all_medalists.csv'
@@ -165,16 +164,17 @@ medals = pd.read_csv(filename)
 
 ```yaml
 type: NormalExercise
-xp: 20
 key: 518652384a
+xp: 20
 ```
-  
-`@instructions`
 
+`@instructions`
 Create a Boolean Series called `during_cold_war` by extracting all rows from `medals` for which the `'Edition'` is `>=` `1952` and `<=` `1988`.
 
-`@sample_code`
+`@hint`
 
+
+`@sample_code`
 ```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
@@ -182,29 +182,32 @@ during_cold_war = ____
 ```
 
 `@solution`
-
 ```{py}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
 during_cold_war = (medals.Edition>=1952) & (medals.Edition<=1988)
 ```
 
+`@sct`
+```{python}
+
+```
 
 ***
 
 ```yaml
 type: NormalExercise
-xp: 20
 key: c23ee4e1f0
+xp: 20
 ```
 
 `@instructions`
-
 Create a Boolean Series called `is_usa_urs` by extracting rows from `medals` for which `'NOC'` is either `'USA'` or `'URS'`.
+
+`@hint`
 
 
 `@sample_code`
-
 ```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
@@ -216,7 +219,6 @@ is_usa_urs = medals.NOC.isin(____)
 ```
 
 `@solution`
-
 ```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
@@ -227,22 +229,26 @@ during_cold_war = (medals.Edition>=1952) & (medals.Edition<=1988)
 is_usa_urs = medals.NOC.isin(['USA', 'URS'])
 ```
 
+`@sct`
+```{python}
 
+```
 
 ***
 
 ```yaml
 type: NormalExercise
-xp: 20
 key: 439d0646e6
+xp: 20
 ```
 
 `@instructions`
-
 Filter the `medals` DataFrame using `during_cold_war` and `is_usa_urs` to create a new DataFrame called `cold_war_medals`
 
-`@sample_code`
+`@hint`
 
+
+`@sample_code`
 ```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
@@ -258,7 +264,6 @@ cold_war_medals = medals.loc[____ & ____]
 ```
 
 `@solution`
-
 ```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
@@ -273,22 +278,26 @@ is_usa_urs = medals.NOC.isin(['USA', 'URS'])
 cold_war_medals = medals.loc[during_cold_war & is_usa_urs]
 ```
 
+`@sct`
+```{python}
 
+```
 
 ***
 
 ```yaml
 type: NormalExercise
-xp: 20
 key: 777c7514cf
+xp: 20
 ```
 
 `@instructions`
-
 Group `cold_war_medals` by `'NOC'`
 
-`@sample_code`
+`@hint`
 
+
+`@sample_code`
 ```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
@@ -308,7 +317,6 @@ country_grouped = ____
 ```
 
 `@solution`
-
 ```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
@@ -327,25 +335,30 @@ cold_war_medals = medals.loc[during_cold_war & is_usa_urs]
 country_grouped = cold_war_medals.groupby('NOC')
 ```
 
+`@sct`
+```{python}
+
+```
+
 ***
 
 ```yaml
 type: NormalExercise
-xp: 20
 key: a858e0543c
+xp: 20
 ```
 
 `@instructions`
-
 Create a Series `Nsports` from `country_grouped` using indexing & chained methods:
 
 - Extract the column "Sport".
 - Use `.nunique()` to get the number of unique elements in each group;
 - Apply `.sort_values(ascending=False)` to  rearrange the Series.
 
+`@hint`
+
+
 `@sample_code`
-
-
 ```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
@@ -370,7 +383,6 @@ print(Nsports)
 ```
 
 `@solution`
-
 ```{python}
 #' @step
 # Extract all rows for which the 'Edition' is between 1952 & 1988: during_cold_war
@@ -394,3 +406,7 @@ Nsports = countr_grouped["Sport"].nunique().sort(ascending = False)
 print(Nsports)
 ```
 
+`@sct`
+```{python}
+
+```
